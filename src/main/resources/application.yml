@@ -1,0 +1,25 @@
+server:
+  port: 3033
+spring:
+  client:
+    json-placeholder-url: "https://jsonplaceholder.typicode.com"
+  application:
+    name: openfeign-service
+  profiles:
+    active: default
+
+# Enable for logging
+logging:
+  level:
+    com.example.openfeign.client: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: HEADERS # Will override from feign config class
+
+
+
